@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+		<title>Front-End Essencial</title>
+		<style type = "text/css">
+			
+			*{
+				margin: 0;
+				border: 0;
+				padding: 0;
+			}
+			html{
+				font-size: 62.5%;
+			}
+
+			header{
+				background-color: #000;
+				color: #fff;
+				font-family: arial;
+				width:100%;
+				position: fixed;
+
+			}
+			h3{
+				font-size: 2.0rem;
+				font-family: arial;
+				margin: 0;
+				padding: 5px;
+			}
+			h4{
+				font-size: 1.3rem;
+				font-family: arial;
+				margin: 0;
+				padding-bottom: 5px;
+				padding-left: 5px;
+			}
+			body{
+				background-color: #F5F5F5
+			}
+			.container{
+				display: block;
+				background-color: #fff;
+				width: 95%;
+				box-shadow: 2px 2px 10px #808080;
+				margin: 0 auto;
+				max-width: 90%; <!-- Ajuste máximo de tela-->
+				max-height: 90%;
+				min-width: 0;
+				min-height: 0;
+				margin-top: 50px;
+
+			}
+			footer{
+				font-family: arial;
+				color: #fff;
+				background-color: #000;
+				text-align: center;
+				padding-top: 5px;
+				padding-bottom: 5px;
+			}
+			p{
+				font-family: arial;
+				text-align: justify;
+				padding: 10px;
+				font-size: 1.6rem;
+			}
+			h1{
+				font-family: arial;
+				text-align: center;
+				padding-top: 10px;
+				font-size: 2.0rem;
+
+			}
+			h2{
+				font-family: arial;
+				text-align: center;
+				padding-top: 10px;
+				font-size: 1.8rem;
+
+			}
+			 .texto-footer{
+			 	font-family: arial;
+				text-align: center;
+				padding-top: 3px;
+				font-size: 1.6rem;
+				padding-bottom: 3px;
+
+
+			 }
+			 .compre{
+			 	background-color: rgba(255,255,0,0.7);
+			 	width: 120px;
+			 	height: 80px;
+			 	position: fixed;
+			 	right: 0;
+			 	text-align: center;
+			 	margin-top: 15%;
+			 	z-index: 1; /*primeira camada*/
+
+			 }
+			 h5{
+			 	font-family: arial;
+				text-align: center;
+				padding: 1px;
+				font-size: 1.5rem;
+			 }
+
+			 button{
+			 	font-family: arial;
+				text-align: center;
+				padding: 5px;
+				font-size: 1.7rem;
+				background-color: rgba(50,205,50,1.0);
+				color: #fff;
+				border: #000 solid;
+
+			 }
+
+			 #grid-container{
+			 	margin-top: 5px;
+			 	background: rgba(211,211,211);
+			 }
+			 .grid{
+			 	display: grid;
+			 	grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+			 	grid-gap: 1px;
+			 	max-width: 1200px;
+			 	margin: 0 auto;
+
+			 }
+			 .grid div{
+			 	background-color: #fff;
+			 	font-family: arial;
+			 	text-align: center;
+			 	font-size: 1.6rem;
+			 	padding: 2px;
+			 	padding-bottom: 10px;
+			 }
+			 #formulario{
+			 	background-color: rgba(211,211,211, 1.0);
+			 	text-shadow: 1px 1px 2px #fff;
+			 }
+			 .formulario-contato{
+			 	font-family: arial;
+			 	text-align: left;
+			 	font-size: 1.8rem;
+			 	padding: 10px:;
+			 	margin-left: 3%;
+			 	font-weight: bold;
+			 	text-shadow: 1px 1px 2px #fff;
+
+			 }
+			 input{
+			 	font-family: sans-serif;
+			 	font-size: 1.7rem;
+			 	padding: 5px;
+			 }
+			 .dados-formulario{
+			 	width: 60%;
+
+			 }
+			 button:hover{
+			 	background-color: rgb(220,220,220);
+
+			 }
+			 nav{
+			 	text-align: right;
+			 	margin-top: 5px;
+			 	font-weight: bold;
+			 	font-family: arial;
+			 	font-size: 1.6rem;
+			 	margin-right: 2%;
+			 	word-spacing: 10px;
+
+			 }
+			 a{
+			 	color: #fff;
+			 	text-decoration: none;
+			 	transition: all 300ms ease-in-out;
+
+			 }
+			 a:hover{
+			 	/*background-color: rgba(169,169,169);*/
+			 	color: rgba(0,191,255);
+
+			 }
+			 #enviar{
+			 	background-color: rgb(128,128,128);
+			 	border-radius: 10%;
+
+			 }
+			 #enviar:hover{
+			 	background-color: rgb(0,128,0);
+			 }
+			 #limpar{
+			 	background-color: rgb(128,128,128);
+			 	border-radius: 10%;
+
+			 }
+			 #limpar:hover{
+			 	background-color: rgb(255,230,0);
+			 }
+			 .imagem-grid{
+			 	width: 18rem;
+			 	height: 10rem;
+			 	border-radius: 10px;
+
+			 }
+			 .texto-grid{
+			 	font-family: arial;
+			 	font-size: 1.7rem;
+			 	text-align: center;
+			 	font-weight: bold;
+			 }
+			 .link-grid{
+			 	color: #0000FF;
+			 	text-decoration: none;
+			 	transition: all 300ms ease-in-out;
+			 	font-weight: bold;
+			 	font-size: 1.8rem;
+
+
+
+			 }
+			 ul,li{
+			 	font-size: 1.6rem;
+			 	font-family: arial;
+			 	text-align: left;
+			 	margin-left: 30px;
+			 	padding-bottom: 10px;
+			 }
+
+
+		</style>
+	</head>
+	<body>
+
+		<header>
+			<nav>
+				<a href="#inicio">Início</a>
+				<a href="#produtos">Cursos</a>
+				<a href="#sobre">Sobre</a>
+			
+			</nav>
+
+			<h3 id="nome-empresa">EMPRESA DE TREINAMENTOS </h3> <!-- h1 é utilizado por buscadores-->
+			<h4 class ="title-pg">Desenvolvedor Front-End</h4>		
+		</header>
+		<!--<div class="compre">
+			<h5>Compre agora mesmo</h5>
+			<button>COMPRAR</button>
+			
+		</div>-->
+		<a id="inicio"></a>
+
+		<br><br><br><br>
+		<section class="container">
+			<h1>EMPRESA DE TREINAMENTO</h1>
+			<h2> Cusos de Informática e Tecnologia</h2>
+			<p>Análise de sistemas é a atividade que tem como finalidade a realização de estudos de processos a fim de encontrar o melhor caminho racional para que a informação possa ser processada. Os analistas de sistemas estudam os diversos sistemas existentes entre hardwares (equipamentos), softwares (programas) e o usuário final.</p>
+
+			<p>Análise de sistemas é a atividade que tem como finalidade a realização de estudos de processos a fim de encontrar o melhor caminho racional para que a informação possa ser processada. Os analistas de sistemas estudam os diversos sistemas existentes entre hardwares (equipamentos), softwares (programas) e o usuário final.</p>
+
+		</section>
+
+		<br><br>
+		<section class="container">
+			<h1>EMPRESA DE TREINAMENTO</h1>
+			<p>Análise de sistemas é a atividade que tem como finalidade a realização de estudos de processos a fim de encontrar o melhor caminho racional para que a informação possa ser processada. Os analistas de sistemas estudam os diversos sistemas existentes entre hardwares (equipamentos), softwares (programas) e o usuário final.</p>
+
+			<p>Análise de sistemas é a atividade que tem como finalidade a realização de estudos de processos a fim de encontrar o melhor caminho racional para que a informação possa ser processada. Os analistas de sistemas estudam os diversos sistemas existentes entre hardwares (equipamentos), softwares (programas) e o usuário final.</p>
+
+			<a href="#" id="produtos"></a>
+		</section>
+
+		<br><br><br><br><br><br>
+		<section class="container" id="grid-container">
+
+			<h2>CONHEÇAM NOSSOS PRODUTOS</h2>
+			<br>
+
+			<div class="grid">
+
+				<div>
+
+					<h2>Curso de Office Essencial</h2>
+
+					<br>
+					<img class="imagem-grid" src="img/office-essencial.jpg" alt="Pacote Office">
+					<p class="texto-grid"> Aprenda como utilizar Execel, Word, Power-Point e Power BI neste curso completo 
+					</p>
+					<a class="link-grid" href="https://www.udemy.com/course/pacote-office-essencial/?referralCode=834CC17614F118EE908D" target="_blank"> >>SAIBA MAIS>></a>
+
+
+				</div>
+
+				<div>
+					
+					<h2>Curso de Office VBA</h2>
+
+					<br>
+					<img class="imagem-grid" src="img/office-vba.jpg" alt="Office VBA">
+					<p class="texto-grid"> Aprenda como utilizar Execel, Word, Power-Point com linguagem de programação vba.
+					</p>
+					<a class="link-grid" href="https://www.udemy.com/course/pacote-office-avancado/?referralCode=4F4D226E99399FA6E428" target="_blank"> >>SAIBA MAIS>></a>
+
+				</div>
+
+				<div>
+
+					<h2>Curso de Excel e PowerBI</h2>
+
+					<br>
+					<img class="imagem-grid" src="img/excel-bi.jpg" alt="Excel e PowerBI">
+					<p class="texto-grid"> Aprenda como utilizar Execel e PowerBI neste 	curso, do ZERO ao intermediário.
+					</p>
+					<a class="link-grid" href="https://www.udemy.com/course/microsoft-word-microsoft-office-365-tcc/?referralCode=20622697B4BC993E04F1" target="_blank"> >>SAIBA MAIS>></a>				
+
+				</div>
+
+				<div>
+
+					<h2>Curso de HTML E CSS Essencial</h2>
+
+					<br>
+					<img class="imagem-grid" src="img/html-css.jpg" alt="HTML e CSS">
+					<p class="texto-grid">Curso completo de desenvolvimento de Sites Responsivos e com HTML e CSS.
+					</p>
+					<a class="link-grid" href="https://www.udemy.com/course/html-essencial-desenvolvimento-front-end/?referralCode=17B2EEB27D69FD37953D" target="_blank"> >>SAIBA MAIS>></a>							
+
+				</div>
+
+				<div>
+
+					<h2>Curso de HTML, CSS e PHP</h2>
+
+					<br>
+					<img class="imagem-grid" src="img/web-php.jpg" alt="HTML, CSS e PHP">
+					<p class="texto-grid">Curso completo de desenvolvimento de Sites Dinâmicos com HTML, CSS e PHP.
+					</p>
+					<a class="link-grid" href="https://www.udemy.com/course/programacao-web/?referralCode=813E21514CE5E44D6112" target="_blank"> >>SAIBA MAIS>></a>					
+
+				</div>
+
+
+				<div>
+
+					<h2>Curso de Lógica de Programação</h2>
+
+					<br>
+					<img class="imagem-grid" src="img/logica.jpg" alt="Logica de Programação">
+					<p class="texto-grid">Aprenda todos os conceitos aplicados em liguagens de programação.
+					</p>
+					<a class="link-grid" href="https://www.udemy.com/course/logica-de-programacao-java-python-visualg-e-javascript/?referralCode=C25452360C505166D470" target="_blank"> >>SAIBA MAIS>></a>
+
+				</div>
+
+			
+			</div>
+
+			<br><br>
+		</section>
+		<br><br>
+		<section class="container" id="formulario">
+
+			<h2> Selecione um Produto para mais informações</h2>
+			<form action="#" method="get" target="_blank">
+				
+				<p class="formulario-contato">
+					<label for="nome">Nome</label>
+					<input class="dados-formulario" type="text" name="nome" placeholder="Insira seu nome">
+				</p>
+				<p class="formulario-contato">
+					<label for="telefone">Telefone</label>
+					<input class="dados-formulario" type="tel" name="telefone" placeholder="Insira seu telefone">
+				</p>
+
+				<p class="formulario-contato">
+					<input type="checkbox" id="office" name="office" value="cursos de office">
+					<label for="office">Quero saber mais sobre cusros de Pacote Office</label>
+					<br><br>
+
+					<input type="checkbox" id="web" name="web" value="cursos de desenv web">
+					<label for="web">Quero saber mais sobre cusros de Desenvolvimento Web</label>
+					<br><br>
+
+					<input type="checkbox" id="marketing" name="marketing" value="cursos de desenv marketing">
+					<label for="marketing">Quero saber mais sobre cusros de Marketing Digital</label>
+					<br><br>
+
+				</p>
+
+				<p class="formulario-contato">
+					<input id="enviar" type="submit" value="ENVIAR">
+					<input id="limpar" type="reset" value="LIMPAR">
+				</p>
+
+			</form>
+		</section>
+
+		<a id="sobre"></a>
+		<br><br>
+		<section class="container">
+			<h1><b><i>EMPRESA DE TREINAMENTO</i></b></h1>
+			<h2><b><i> SOBRE A EMPRESA</i></b></h2>
+			<h2 class ="title-sobre">Para nós, o ser humano é o centro de toda a mudança.</h2>
+
+			<p>Muito se fala em futuro do trabalho, revolução digital e seus impactos nas organizações. Para nós, nenhuma conversa sobre isso faz sentido sem voltarmos os olhos ao ser humano como centro de toda mudança.
+			</p>
+
+			<p>Acreditamos no indivíduo como núcleo da verdadeira transformação. Nosso foco está no comportamento das pessoas e no aperfeiçoamento de suas capacidades, entre elas: liderança, empatia, resiliência, protagonismo, autogestão, criatividade e resolução de problemas, produtividade e ética.
+			</p>
+
+			<p>Por meio de programas, imersões, trilhas e projetos customizados, presenciais ou remotos, promovemos o desenvolvimento humano e a transformação real e positiva nas empresas.
+			Não há transformação na empresa
+			sem a transformação do indivíduo.
+			E como transformamos o indivíduo? A partir dos seus aspectos mais humanos.
+			</p>
+
+			<p>Nossa missão é desenvolver profundamente as pessoas em suas habilidades e seus valores intrínsecos para que se tornem engajadas, realizadas e mais capazes de gerar melhores resultados a si mesmas, às empresas e ao meio onde estão inseridas.</p>
+
+			<p>Isso é totalmente possível através de práticas presenciais e online que nossos Programas e Trilhas oferecem.
+			</p>
+
+		</section>
+
+		<br><br>
+		<section class="container">
+			
+			<h2>TAMBÉM OFERECEMOS EM NOSSA GRADE DE SERVIÇOS:</h2>
+			<br>
+
+			<ul>
+				
+				<li>Desenvolvimento de Sites</li>
+				<li>Marketing Digital - Anúncios Google</li>
+				<li>Desenvolvimento de Aplicativos</li>
+				<li>Treinamentos Personalizados de Informática</li>
+				<li>Montagemd e Computadores</li>
+
+			</ul>
+
+		</section>
+
+		<br><br>
+		<footer>
+			<h3>EMPRESA DE TREINAMENTOS </h3>
+			<h4>InformáticaLtda</h4>
+			<br>
+			<p class="texto-footer"><b>Contato</b></p>
+			<p class="texto-footer">Telefone: 000000-000</p>
+			<p class="texto-footer">whatsApp: 000000-000</p>
+			<p class="texto-footer">Email: contato@gmail.com</p>
+			<p class="texto-footer">Endereço Empresa de Treinamentos</p>
+
+			<br>
+
+		</footer>	
+	</body>
+</html>
